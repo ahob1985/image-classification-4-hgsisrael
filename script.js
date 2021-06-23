@@ -11,7 +11,7 @@ let resetButton;
 // Global ML Variables
 let doodlenet;
 let img;
-let isModeReady;
+let isModelReady;
 //let doodlenet;
 
 function setup() {
@@ -31,12 +31,12 @@ function setup() {
   resetButton.mousePressed(resetCanvas);
   buttonDiv.style("display", "none");
 
-  isModeReady = false;
+  isModelReady = false;
   doodlenet = ml5.imageClassifier("DoodleNet", modelReady);
 }
 
 function draw() {
-  if(mouseIsPressed && ismodelReady)  {
+  if(mouseIsPressed && isModelReady)  {
     strokeWeight(25);
     line(mouseX, mouseY, pmouseX, pmouseY);
   }
@@ -49,7 +49,7 @@ function resetCanvas() {
 }
 
 function modelReady() {
-  isModeReady = true;
+  isModelReady = true;
   buttonDiv.style("display", "block");
   textP.html("Draw youre image, then click submit!");
 }
